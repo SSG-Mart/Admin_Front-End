@@ -1,0 +1,53 @@
+.chart-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+    align-items: center;
+
+    .chart-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 4px;
+        width: 98%;
+        height: 30px;
+        background-color: rgb(81, 100, 163);
+        border-radius: 50px;
+        color: white;
+        position: relative
+      }
+
+      .chart {
+        display: flex;
+        width: 70%;
+        // height: 230px; 
+
+        .colors-title {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+            justify-content: flex-end;
+            padding-left: 2%;
+
+            .green {
+                width: 20px;
+                height: 20px;
+                background-color: green;
+                border: 2px solid white;
+                box-shadow: 0px 0px 4px;
+            }
+
+            .red {
+                width: 20px;
+                height: 20px;
+                background-color: rgb(255, 0, 0);
+                border: 2px solid white;
+                box-shadow: 0px 0px 4px;
+            }
+        }
+    }
+}
