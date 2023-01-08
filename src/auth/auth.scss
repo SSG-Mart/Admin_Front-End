@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+.auth{
+    // Variable
+  $font-family-one: Arial, Helvetica, sans-serif;
+  $font-family-two: Arial, Helvetica, sans-serif;
+  $font-family-three: Arial, Helvetica, sans-serif;
+  
+  $label-font-size: 17px;
+
+  width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  
+
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px #eee solid;
+    overflow: hidden;
+  }
+  
+  .mainCard {
+    display: flex;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .left {
+    width: 350px;
+    background-image: url("../assets/login.jpg");
+    background-size: cover;
+    background-position: center;
+  
+    img {
+      width: 100%;
+    }
+  }
+  
+  .right {
+    width: auto;
+    background-color: rgb(255, 255, 255);
+  
+    .title {
+      color: rgb(36, 36, 36);
+      font-family: $font-family-one;
+      text-align: center;
+      padding: 30px;
+      padding-top: 10px;
+    }
+  
+    form {
+      padding: 50px;
+  
+      label {
+        display: block;
+        font-size: $label-font-size;
+        margin-bottom: 3px;
+        font-family: $font-family-three;
+      }
+  
+      input[type="email"] {
+        margin-bottom: 20px;
+      }
+  
+      input[type="password"],
+      input[type="email"] {
+        background-color: #fff;
+        border: 1px rgb(202, 202, 202) solid;
+        padding: 10px;
+        border-radius: 4px;
+        width: 200px;
+      }
+  
+      .forget-password{
+        text-decoration: underline;
+        font-family: $font-family-one;
+        color: blue;
+        font-size: 13px;
+        margin-top: 7px;
+      }
+  
+      button {
+        width: 100%;
+        border: none;
+        margin: 10px 0;
+        font-family: $font-family-two;
+        padding: 7px;
+        background-color: rgb(255, 153, 0);
+        border-radius: 3px;
+        color: rgb(255, 255, 255);
+        font-weight: 700;
+        margin-top: 0px;
+        transition: 0.2s ease-in-out;
+      }
+  
+      button:hover {
+        background-color: blueviolet;
+      }
+  
+      .signUpLink {
+        color: rgb(54, 54, 54);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
