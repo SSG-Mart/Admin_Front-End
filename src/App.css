@@ -1,14 +1,8 @@
-.admin-container {
+.app-container {
     display: flex;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
     background-color:rgb(43, 2, 43);
     align-items: center;
-    // overflow-y: auto;
-
-    .home {
-        width: 98%;
-        height: 100vh;
-    }
 }

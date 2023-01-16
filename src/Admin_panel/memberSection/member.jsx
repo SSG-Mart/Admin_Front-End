@@ -3,9 +3,22 @@ import './member.scss'
 
 export default function member() {
   return (
-    <div className='main-member-fram'>
+    <div className='main-member-fram' id='member'>
     <div className='fram-header'>
         <p>Members</p>
+    </div>
+    <div className='filter'>
+        <label><input type="checkbox" />sellers</label>
+        <label><input type="checkbox" />Buyers</label>
+        <form action="/" method="get" className="form">
+            <input className="search" type="text" id="search" placeholder="Search user name..."/>
+        </form>{" "}
+          {/* end search class */}
+          <div>
+            <button className="search-btn">
+              <i className="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
     </div>
     <div className='table-fram'> {/* ---------------------------------------table fram----------------------------------- */}
         <div className='table-header'> {/* ---------------------------------------table header----------------------------------- */}
