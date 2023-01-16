@@ -12,12 +12,13 @@ import {
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement);
 
 export default function chart() {
+  
   const data = {
-    labels: [" ", " ", " ", " ", " ", " "],
+    labels: [" ", " ", " ", " ", " ", " "," ", " ", " "],
     datasets: [
       {
         label: "Buyer",
-        data: [0, 1.8, 4, 5, 5, 6],
+        data: [0, 1.8, 4, 5, 5, 1000, 1100],
         // data: [0.7, 2, 2, 1.5, 3, 3.1],
         backgroundColor: "transparent",
         borderColor: "red",
@@ -26,7 +27,7 @@ export default function chart() {
       {
         label: "Seller",
         // data: [0, 1.8, 4, 5, 5, 6],
-        data: [0.7, 2, 2, 1.5, 3, 3.1],
+        data: [0.7, 2, 2, 1.5, 3,900, 1000],
         backgroundColor: "transparent",
         borderColor: "Green",
         pointBorderColor: "transparent",

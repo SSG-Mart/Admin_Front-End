@@ -1,0 +1,288 @@
+.report-contaier {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    width: 100%;
+    height: 100vh;
+    // background-color: rgb(228, 137, 137);
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 5px;
+
+    .headre-name {
+        display: flex;
+        width: 95%;
+        height: 60px;
+        background-color: rgb(59, 59, 241);
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: white;
+    }
+
+    .report-body {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: 70vh;
+        background-color: white;
+
+        .table-fram {
+            display: flex;
+            flex-direction:column ;
+            width: 99%;
+            height: 62vh;
+            // background-color: red;
+            // margin-top: 4px;
+            // overflow-y: scroll;
+            align-items: center;
+            justify-content: center;
+    
+            .table-header {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 12%;
+                overflow-y: scroll;
+                // background-color: aqua;
+                margin-bottom: 2px;
+    
+                .number {
+                    width: 5%;
+                    height: 90%;
+                    background-color: gray;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    // border-right: solid black 1px;
+                    // border-bottom: solid black 1px;
+                    // border-top: solid black 1px;
+                    border: solid black 1px;
+                    color: white;
+                }
+    
+                .action {
+                    width: 30%;
+                    height: 90%;
+                    background-color: gray;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-right: solid black 1px;
+                    border-bottom: solid black 1px;
+                    border-top: solid black 1px;
+                    color: white;
+                }
+    
+                .user-name {
+                    width: 20%;
+                    height: 90%;
+                    background-color: gray;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-right: solid black 1px;
+                    border-bottom: solid black 1px;
+                    border-top: solid black 1px;
+                    color: white;
+                }
+    
+                .report {
+                    width: 10%;
+                    height: 90%;
+                    background-color: rgb(128, 128, 128);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;   
+                    border-right: solid black 1px;
+                    border-bottom: solid black 1px;
+                    border-top: solid black 1px;
+                    color: white;
+                }
+
+                .action-report{
+                    width: 30%;
+                    height: 90%;
+                    background-color: gray;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border-right: solid black 1px;
+                    border-bottom: solid black 1px;
+                    border-top: solid black 1px;
+                    color: white;
+                }
+
+                .number-worning{
+                    width: 10%;
+                    height: 90%;
+                    background-color: gray;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-right: solid black 1px;
+                    border-bottom: solid black 1px;
+                    border-top: solid black 1px;
+                    color: white;
+                    text-align: center;
+                }
+            }
+    
+            .table-body {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 90%;
+                // background-color: aqua;
+                overflow-y: scroll;
+    
+    
+                .data-section {
+                    display: flex;
+                    margin-bottom: 1px;
+    
+                    .body-number {
+                        width: 5%;
+                        height: 55px;
+                        // background-color: gray;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        // border-right: solid black 1px;
+                        // border-bottom: solid black 1px;
+                        // border-top: solid black 1px;
+                        border: solid black 1px;
+                    }
+    
+                    .body-user-name {
+                        cursor: pointer;
+                        width: 20%;
+                        height: 55px;
+                        // background-color: gray;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border-right: solid black 1px;
+                        border-bottom: solid black 1px;
+                        border-top: solid black 1px;
+    
+                        &:hover {
+                            color: blue;
+                        }
+                    }
+    
+                    .body-report {
+                        width: 10%;
+                        height: 55px;
+                        // background-color: gray;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border-right: solid black 1px;
+                        border-bottom: solid black 1px;
+                        border-top: solid black 1px;
+                    }
+    
+                    .body-action {
+                        width: 30%;
+                        height: 55px;
+                        // background-color: rgb(128, 128, 128);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;   
+                        border-right: solid black 1px;
+                        border-bottom: solid black 1px;
+                        border-top: solid black 1px;
+                        gap: 5px;
+
+                        .warning {
+                            cursor: pointer;
+                            display: flex;
+                            justify-content:center;
+                            align-items: center;
+                            width: 30%;
+                            height: 30px;
+                            // background-color: blue;
+                            font-weight: bold;
+                            border-radius: 40px;
+                            border: solid blue 1px;
+                            background-color: white;
+                            color: blue;
+
+                            &:hover {
+                                background-color: blue;
+                                color: white;   
+                            }
+                        }
+
+                        .remove {
+                            cursor: pointer;
+                            display: flex;
+                            justify-content:center;
+                            align-items: center;
+                            width: 30%;
+                            height: 30px;
+                            font-weight: bold;
+                            border: solid red 1px;
+                            background-color: white;
+                            color: red;
+                            border-radius: 40px;
+
+                            &:hover {
+                                background-color: red;
+                                color: white;   
+                            }
+                        }
+                    }
+
+                    .body-action-report {
+                        width: 30%;
+                        height: 55px;
+                        // background-color: gray;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border-right: solid black 1px;
+                        border-bottom: solid black 1px;
+                        border-top: solid black 1px;
+
+                        textarea {
+                            overflow: hidden;
+                            display: flex;
+                            overflow-y: auto;
+                            width: 100%;
+                            height:  100%;
+                            border: none;
+                        }
+                    }
+
+                    .body-number-worning {
+                        width: 10%;
+                        height: 55px;
+                        // background-color: gray;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        border-right: solid black 1px;
+                        border-bottom: solid black 1px;
+                        border-top: solid black 1px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,23 +1,20 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AdminPanel from './Admin_panel/admin_panel';
-import Login from './auth/login';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import MainRoutes from "./routes";
+// import Home from './Admin_panel/adminHome/adminHome';
+
+import Nav from "./Admin_panel/adminNav/adminNav";
+import "./App.css";
 
 function App() {
   return (
-
-<BrowserRouter>
-<Routes>
-
-  <Route path="/" element={<AdminPanel />} />
-
-  <Route path="/auth" element={<Login />} />
-
-  
-</Routes>
-</BrowserRouter>
-
-
+    <div className="app-container">
+      <BrowserRouter>
+        <Nav />
+        <MainRoutes />
+      </BrowserRouter>
+    </div>
   );
 }
 
