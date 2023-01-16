@@ -14,6 +14,7 @@ export default function filter() {
             <div className='user-name'>User Name</div>
             <div className='report'>Number of report</div>
             <div className='action-report'>Fault</div>
+            <div className='number-worning'>Number of Werning</div>
             <div className='action'>Action</div>
         </div> 
 
@@ -27,6 +28,7 @@ export default function filter() {
             <div className='body-action-report'>
               <textarea type="text" rows="4" cols="26" placeholder="Enter Your Description" />
             </div>
+            <div className='body-number-worning'>0</div>
             <div className='body-action'>
               <div className='warning'><p style={{marginRight:'4px'}}>Warning</p><RiFolderWarningLine /></div>
               <div className='remove'><p style={{marginRight:'4px'}}>Remove</p><GrUserSettings /></div>
