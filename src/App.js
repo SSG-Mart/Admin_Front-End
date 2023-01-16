@@ -1,43 +1,20 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AdminPanel from './Admin_panel/admin_panel';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import MainRoutes from "./routes";
 // import Home from './Admin_panel/adminHome/adminHome';
-import Login from './auth/login';
-import Member from './Admin_panel/memberSection/member'
-import Report from './Admin_panel/reportSection/report'
-import Nav from './Admin_panel/adminNav/adminNav';
-import './App.css'
+
+import Nav from "./Admin_panel/adminNav/adminNav";
+import "./App.css";
 
 function App() {
   return (
-
-    <div className='app-container'>
-
-      <>
+    <div className="app-container">
+      <BrowserRouter>
         <Nav />
-      </>
-
-      <>
-  <BrowserRouter>
-    <Routes>
-
-      <Route path="/" element={<AdminPanel />} />
-
-      <Route path="/auth" element={<Login />} />
-
-      <Route path="/member" element={<Member />} />
-
-      <Route path="/report" element={<Report />} />
-
-      <Route path="/report" element={<Report />} />
-
-    </Routes>
-  </BrowserRouter>
-
-      </>
-
-  </div>
-
+        <MainRoutes />
+      </BrowserRouter>
+    </div>
   );
 }
 
