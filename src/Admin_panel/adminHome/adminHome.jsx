@@ -1,8 +1,25 @@
 import React from 'react'
 import './adminHome.scss'
 import Chart from '../chart/chart';
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 export default function AdminHome() {
+    const [itemdata, setitemData] = useState([])
+
+    useEffect(()=>{
+        axios.get("/api/home")
+        .then(res => {
+          if(res.data !== "No data found"){
+            setitemData(res.data)
+          }
+          else console.log("No data found");
+        })
+        .catch(err => console.log(err))
+      })
+
+      console.log(itemdata)
+
   return (
     <div className='admin-home' id='home'>
         <div className='body'>
