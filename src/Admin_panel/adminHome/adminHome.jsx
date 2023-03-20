@@ -1,24 +1,24 @@
 import React from 'react'
 import './adminHome.scss'
 import Chart from '../chart/chart';
-import axios from "axios";
+import instance from '../../config/axiosConfig';
 import { useState} from "react";
 
 export default function AdminHome() {
     const [itemdata, setitemData] = useState([])
 
     useState(()=>{
-        axios.get("/api/home")
-        .then(res => {
-          if(res.data !== "No data found"){
-            setitemData(res.data)
-          }
-          else console.log("No data found");
+        instance.post('/api/member/activate', {
+            "member_id":131
         })
-        .catch(err => console.log(err))
-      })
+        .then(res=>{
+            console.log(res.data);
+        })
+        .catch(err=>{
+            console.log(err.response);
+        });
+    })
 
-      console.log(itemdata)
 
   return (
     <div className='admin-home' id='home'>
