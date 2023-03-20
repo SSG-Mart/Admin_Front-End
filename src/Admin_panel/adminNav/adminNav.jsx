@@ -25,13 +25,13 @@ export default function AdminNav() {
 
             <div className="NI" onClick={() => navigate('/member')}>
                 <FiUsers style={{cursor: 'pointer'}}/>
-                <p style={{cursor: 'pointer'}}  >Members</p>
+                <p style={{cursor: 'pointer'}}  >Member Management</p>
             </div>
                 <div className="Line">|</div>
-                
+
             <div className="NI" onClick={() => navigate('/report')} >
                 <MdOutlineReport style={{cursor: 'pointer'}}/>
-                <p style={{cursor: 'pointer'}}  >Report</p>
+                <p style={{cursor: 'pointer'}}  >Seller Verification</p>
             </div>
             <div className="Line">|</div>
 
