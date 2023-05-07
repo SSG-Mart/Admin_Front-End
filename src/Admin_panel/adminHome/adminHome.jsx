@@ -8,11 +8,9 @@ export default function AdminHome() {
     const [itemdata, setitemData] = useState([])
 
     useState(()=>{
-        instance.post('/api/member/activate', {
-            "member_id":131
-        })
+        instance.get('/api/home')
         .then(res=>{
-            console.log(res.data);
+            setitemData(res.data);
         })
         .catch(err=>{
             console.log(err.response);

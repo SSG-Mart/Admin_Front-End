@@ -86,8 +86,20 @@
             // background-color: aqua;
             overflow-x: hidden;
 
+            .user-id {
+                width: 15%;
+                height: 75%;
+                background-color: gray;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: solid black 0.1px;
+                color: white;
+            }
+
             .name {
-                width: 32%;
+                width: 22%;
                 height: 75%;
                 background-color: gray;
                 display: flex;
@@ -110,8 +122,20 @@
                 color: white;
             }
 
-            .item-catagory {
-                width: 18%;
+            .status {
+                width: 12%;
+                height: 75%;
+                background-color: gray;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: solid black 0.1px;
+                color: white;
+            }
+
+            .district-name {
+                width: 23%;
                 height: 75%;
                 background-color: gray;
                 display: flex;
@@ -123,7 +147,7 @@
             }
 
             .mobile{
-                width: 20%;
+                width: 25%;
                 height: 75%;
                 background-color: rgb(128, 128, 128);
                 display: flex;
@@ -159,8 +183,19 @@
             .data-section {
                 display: flex;
 
+                .body-user-id {
+                    width: 15%;
+                    height: 60px;
+                    // background-color: gray;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border: solid black 0.1px;
+                }
+
                 .body-name {
-                    width: 32%;
+                    width: 22%;
                     height: 60px;
                     // background-color: gray;
                     display: flex;
@@ -171,7 +206,7 @@
                 }
 
                 .body-mobile {
-                    width: 20%;
+                    width: 25%;
                     height: 60px;
                     // background-color: gray;
                     display: flex;
@@ -181,8 +216,8 @@
                     border: solid black 0.1px;
                 }
 
-                .body-item-catagory {
-                    width: 18%;
+                .body-district-name {
+                    width: 23%;
                     height: 60px;
                     // background-color: gray;
                     display: flex;
@@ -194,6 +229,17 @@
 
                 .body-isSeller {
                     width: 15%;
+                    height: 60px;
+                    // background-color: rgb(128, 128, 128);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;   
+                    border: solid black 0.1px;
+                }
+
+                .body-status {
+                    width: 12%;
                     height: 60px;
                     // background-color: rgb(128, 128, 128);
                     display: flex;
