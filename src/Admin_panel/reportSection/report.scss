@@ -1,4 +1,4 @@
-.report-contaier {
+.verification-contaier {
     display: flex;
     flex-direction: column;
     padding-top: 20px;
@@ -21,7 +21,7 @@
         color: white;
     }
 
-    .report-body {
+    .verification-body {
         display: flex;
         flex-direction: column;
         // justify-content: center;
@@ -67,7 +67,7 @@
                 }
     
                 .action {
-                    width: 30%;
+                    width: 20%;
                     height: 90%;
                     background-color: gray;
                     display: flex;
@@ -94,8 +94,8 @@
                     color: white;
                 }
     
-                .report {
-                    width: 10%;
+                .store-name {
+                    width: 20%;
                     height: 90%;
                     background-color: rgb(128, 128, 128);
                     display: flex;
@@ -108,8 +108,8 @@
                     color: white;
                 }
 
-                .action-report{
-                    width: 30%;
+                .nic{
+                    width: 20%;
                     height: 90%;
                     background-color: gray;
                     display: flex;
@@ -122,8 +122,8 @@
                     color: white;
                 }
 
-                .number-worning{
-                    width: 10%;
+                .item-category{
+                    width: 20%;
                     height: 90%;
                     background-color: gray;
                     display: flex;
@@ -182,8 +182,8 @@
                         }
                     }
     
-                    .body-report {
-                        width: 10%;
+                    .body-store-name {
+                        width: 20%;
                         height: 55px;
                         // background-color: gray;
                         display: flex;
@@ -196,7 +196,7 @@
                     }
     
                     .body-action {
-                        width: 30%;
+                        width: 20%;
                         height: 55px;
                         // background-color: rgb(128, 128, 128);
                         display: flex;
@@ -212,7 +212,7 @@
                             display: flex;
                             justify-content:center;
                             align-items: center;
-                            width: 30%;
+                            width: 40%;
                             height: 30px;
                             // background-color: blue;
                             font-weight: bold;
@@ -232,7 +232,7 @@
                             display: flex;
                             justify-content:center;
                             align-items: center;
-                            width: 30%;
+                            width: 40%;
                             height: 30px;
                             font-weight: bold;
                             border: solid red 1px;
@@ -247,8 +247,8 @@
                         }
                     }
 
-                    .body-action-report {
-                        width: 30%;
+                    .body-nic {
+                        width: 20%;
                         height: 55px;
                         // background-color: gray;
                         display: flex;
@@ -269,8 +269,8 @@
                         }
                     }
 
-                    .body-number-worning {
-                        width: 10%;
+                    .body-item-category {
+                        width: 20%;
                         height: 55px;
                         // background-color: gray;
                         display: flex;

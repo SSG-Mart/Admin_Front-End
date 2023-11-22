@@ -1,7 +1,7 @@
 .main-seller-fram {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     // height: 82vh;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
@@ -86,8 +86,8 @@
             overflow-x: hidden;
             // background-color: aqua;
 
-            .store-name {
-                width: 15%;
+            .name {
+                width: 17.5%;
                 height: 75%;
                 background-color: gray;
                 display: flex;
@@ -99,7 +99,7 @@
             }
 
             .main-catagory {
-                width: 10%;
+                width: 12.5%;
                 height: 75%;
                 background-color: gray;
                 display: flex;
@@ -122,8 +122,8 @@
                 color: white;
             }
 
-            .district-name {
-                width: 20%;
+            .address {
+                width: 12.5%;
                 height: 75%;
                 background-color: rgb(128, 128, 128);
                 display: flex;
@@ -135,7 +135,7 @@
             }
 
             .mobile{
-                width: 15%;
+                width: 12.5%;
                 height: 75%;
                 background-color: rgb(128, 128, 128);
                 display: flex;
@@ -147,19 +147,7 @@
             }
 
             .item {
-                width: 10%;
-                height: 75%;
-                background-color: rgb(128, 128, 128);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;   
-                border: solid black 0.1px;
-                color: white;
-            }
-
-            .status {
-                width: 10%;
+                width: 15%;
                 height: 75%;
                 background-color: rgb(128, 128, 128);
                 display: flex;
@@ -171,7 +159,7 @@
             }
 
             .activatetion{
-                width: 20%;
+                width: 15%;
                 height: 75%;
                 background-color: rgb(128, 128, 128);
                 display: flex;
@@ -195,8 +183,8 @@
             .data-section {
                 display: flex;
 
-                .body-store-name {
-                    width: 15%;
+                .body-name {
+                    width: 17.5%;
                     height: 60px;
                     // background-color: gray;
                     display: flex;
@@ -207,7 +195,7 @@
                 }
 
                 .body-main-catagory {
-                    width: 10%;
+                    width: 15%;
                     height: 60px;
                     // background-color: gray;
                     display: flex;
@@ -218,7 +206,7 @@
                 }
 
                 .body-sub-catagory {
-                    width: 15%;
+                    width: 12.5%;
                     height: 60px;
                     // background-color: gray;
                     display: flex;
@@ -228,8 +216,8 @@
                     border: solid black 0.1px;
                 }
 
-                .body-district-name {
-                    width: 20%;
+                .body-address {
+                    width: 12.5%;
                     height: 60px;
                     // background-color: gray;
                     display: flex;
@@ -240,7 +228,7 @@
                 }
 
                 .body-mobile {
-                    width: 15%;
+                    width: 12.5%;
                     height: 60px;
                     // background-color: gray;
                     display: flex;
@@ -251,7 +239,7 @@
                 }
 
                 .body-more-deatil {
-                    width: 10%;
+                    width: 15%;
                     height: 60px;
                     // background-color: rgb(128, 128, 128);
                     display: flex;
@@ -274,19 +262,8 @@
                     }
                 }
 
-                .body-status {
-                    width: 10%;
-                    height: 60px;
-                    // background-color: gray;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    border: solid black 0.1px;
-                }
-
                 .body-activatetion {
-                    width: 20%;
+                    width: 15%;
                     height: 60px;
                     // background-color: rgb(128, 128, 128);
                     display: flex;

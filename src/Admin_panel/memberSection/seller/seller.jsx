@@ -1,125 +1,180 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "./seller.scss";
 import instance from '../../../config/axiosConfig';
 
-export default function Seller(props) {
+export default function Seller() {
 
-  const [sellerData, setSellerData] = useState ([]);
-  const [searchSellerData, setSearchSellerData] = useState("")
-  const [sellerArr, setSellerArr] = useState ();
+  const [allSeller, setallSeller] = useState([]);
 
-  const handleActivate = (seller_id) => {
-    instance.post('/api/member/seller/activate', { "seller_id": seller_id })
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const [filterType, setFilterType] = useState('all');
+
+
+  useState(() => {
+    instance.get('/api/seller')
       .then(res => {
+        setallSeller(res.data);
         console.log(res.data);
-        // Update seller activation status in sellerData state
-        setSellerData(prevData => prevData.map(seller => {
-          if (seller.seller_id === seller_id) {
-            return { ...seller, is_activated: true };
-          } else {
-            return seller;
-          }
-        }));
       })
       .catch(err => {
         console.log(err.response);
-      });
-  };
-
-  const handleDeactivate = (seller_id) => {
-    instance.post('/api/member/seller/deactivate', { "seller_id": seller_id })
-      .then(res => {
-        console.log(res.data);
-        // Update seller activation status in sellerData state
-        setSellerData(prevData => prevData.map(seller => {
-          if (seller.seller_id === seller_id) {
-            return { ...seller, is_activated: false };
-          } else {
-            return seller;
-          }
-        }));
-      })
-      .catch(err => {
-        console.log(err.response);
-      });
-  };
-
-  useEffect(() => {
-    instance.get("/api/member/seller")
-      .then(res => {
-        if (res.data !== "No data found") {
-          setSellerData(res.data)
-        } else {
-          console.log("No data found");
-        }
-      })
-      .catch(err => {
-        console.log(err);
       });
   }, []);
 
-  useEffect(() => {
-    let sellerArr = sellerData.map((data, key) => {
-      if ((data.user_name.toLowerCase().includes(searchSellerData.toLowerCase())) || data.seller_id.toString().includes(searchSellerData)) {
-        return (
-          <div className='data-section' key={key}>
-            <div className='body-store-name'>{data.store_name}</div>
-            <div className='body-main-catagory'>{data.C_ID}</div>
-            <div className='body-district-name'>{data.district_name}</div>
-            <div className='body-mobile'>{data.mobile}</div>
-            <div className='body-more-deatil'><button>Click here</button> </div>
-            <div className='body-status'>{data.is_activated ? 'Activated' : 'Deactivated'}</div>
-            <div className='body-activatetion'>
-              <button className='activate' onClick={() => handleActivate(data.seller_id)}>Activate</button>
-              <button className='deactivate' onClick={() => handleDeactivate(data.seller_id)}>Deactivate</button>
-            </div>
-          </div>
-        )
-      }
-    })
-    setSellerArr(sellerArr)
-  }, [sellerData, searchSellerData])
 
+  const handleActivate = (sellerId) => {
+    instance.post('/api/seller/activate', { seller_id: sellerId })
+      .then(res => {
+        // Update the local state to reflect the new activation_state
+        setallSeller(prevSellers => (
+          prevSellers.map(seller => (
+            seller.seller_id === sellerId
+              ? { ...seller, activation_state: 1 }
+              : seller
+          ))
+        ));
+        console.log('Seller activated:', res.data);
+      })
+      .catch(err => {
+        console.log('Error activating seller:', err.response);
+      });
+  };
+
+  const handleDeactivate = (sellerId) => {
+    instance.post('/api/seller/deactivate', { seller_id: sellerId })
+      .then(res => {
+        // Update the local state to reflect the new activation_state
+        setallSeller(prevSellers => (
+          prevSellers.map(seller => (
+            seller.seller_id === sellerId
+              ? { ...seller, activation_state: 0 }
+              : seller
+          ))
+        ));
+        console.log('Seller deactivated:', res.data);
+      })
+      .catch(err => {
+        console.log('Error deactivating seller:', err.response);
+      });
+  };
+
+
+  // const filteredSellers = allSeller.filter(seller =>
+  //   seller.user_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //   seller.store_name.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
+
+  const filteredSellers = allSeller.filter(seller => {
+    const matchesSearchTerm =
+      seller.user_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      seller.store_name.toLowerCase().includes(searchTerm.toLowerCase());
+
+    if (filterType === 'all') {
+      return matchesSearchTerm;
+    } else if (filterType === 'activate') {
+      return seller.activation_state === 1 && matchesSearchTerm;
+    } else if (filterType === 'deactivate') {
+      return seller.activation_state === 0 && matchesSearchTerm;
+    }
+
+    return true;
+  });
 
   return (
     <div className='main-seller-fram'>
-    <div className='fram-header'>
+      <div className='fram-header'>
         <p>Seller</p>
-    </div>
+      </div>
 
-    <div className='filter'>
-        <label><input type="checkbox" />Activate</label>
-        <label><input type="checkbox" />Deactivate</label>
+      <div className='filter'>
+        {/* <label><input type="checkbox" />Activate</label>
+        <label><input type="checkbox" />Deactivate</label> */}
+
+        <div className="filter-radio" style={{ display: 'flex' }}>
+          <label>
+            <input
+              type="radio"
+              name="filterType"
+              value="all"
+              checked={filterType === 'all'}
+              onChange={() => setFilterType('all')}
+            />
+            All
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="filterType"
+              value="activate"
+              checked={filterType === 'activate'}
+              onChange={() => setFilterType('activate')}
+            />
+            Activate
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="filterType"
+              value="deactivate"
+              checked={filterType === 'deactivate'}
+              onChange={() => setFilterType('deactivate')}
+            />
+            Deactivate
+          </label>
+        </div>
+
         <form action="/" method="get" className="form">
-            <input className="search" type="text" id="search" placeholder="Search user name..."
-            onChange={(e) => setSearchSellerData(e.target.value)}/>
+          <input className="search" type="text" id="search" placeholder="Search user name..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
         </form>{" "}
-          {/* end search class */}
-          {/* <div>
-            <button className="search-btn">
-              <i className="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </div> */}
-    </div>
-    <div className='table-fram'> {/* ---------------------------------------table fram----------------------------------- */}
+        {/* end search class */}
+        {/* <div>
+          <button className="search-btn">
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div> */}
+
+      </div>
+      <div className='table-fram'> {/* ---------------------------------------table fram----------------------------------- */}
         <div className='table-header'> {/* ---------------------------------------table header----------------------------------- */}
-            <div className='store-name'>Store Name</div>
-            <div className='main-catagory'>Main Catagory</div>
-            <div className='district-name'>District Name</div>
-            <div className='mobile'>Mobile</div>
-            <div className='item'>Item</div>
-            <div className='status'>Status</div>
-            <div className='activatetion'>Activate/Deactivate</div>
-        </div> 
+          <div className='name'>User Name</div>
+          <div className='sub-catagory'>Store Name</div>
+          <div className='main-catagory'>Main Catagory</div>
+          <div className='address'>Address</div>
+          <div className='mobile'>Mobile</div>
+          <div className='item'>Verified Seller</div>
+          <div className='activatetion'>Activate/Deactivate</div>
+        </div>
 
         <div className='table-body'> {/* ---------------------------------------table body----------------------------------- */}
 
-        {/* ---------------------------------------table data (repeat section) ----------------------------------- */}    
 
-        {sellerArr}
+          {/* ---------------------------------------table data (repeat section) ----------------------------------- */}
+          {filteredSellers.map((sellers, index) => (
+            <div className='data-section' key={index}>
+              <div className='body-name'>{sellers.user_name}</div>
+              <div className='body-main-catagory'>{sellers.store_name}</div>
+              <div className='body-sub-catagory'> {sellers.C_ID === 1 ? 'SOLID' : sellers.C_ID === 2 ? 'FOOD' : ''}</div>
+              <div className='body-address'>{sellers.district_name}</div>
+              <div className='body-mobile'>{sellers.mobile}</div>
+              <div className='body-more-deatil'>{sellers.verify_seller === 1 ? 'Yes' : sellers.verify_seller === 0 ? 'No' : ''}</div>
+              <div className='body-activatetion'>
+                {sellers.activation_state === 1 ? (
+                  <button className='deactivate' onClick={() => handleDeactivate(sellers.seller_id)}>
+                    Deactivate
+                  </button>
+                ) : (
+                  <button className='activate' onClick={() => handleActivate(sellers.seller_id)}>
+                    Activate
+                  </button>
+                )}
+              </div>
+
+            </div>
+          ))}
 
         </div>
-    </div>
+      </div>
     </div>
   )
 }
