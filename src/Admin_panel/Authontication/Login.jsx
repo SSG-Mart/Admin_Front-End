@@ -16,7 +16,7 @@ export default function Login() {
         try {
             setLoading(true);
 
-            const response = await instance.post('http://localhost:7001/api/admin/login', {
+            const response = await instance.post('/api/admin/login', {
                 email: email,
                 password: password,
             });
