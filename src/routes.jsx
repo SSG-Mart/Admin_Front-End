@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import Login from "./auth/login";
+import Login from './Admin_panel/Authontication/Login';
 import Member from "./Admin_panel/memberSection/member";
 import Report from "./Admin_panel/reportSection/report";
 import AdminPanel from "./Admin_panel/admin_panel";
