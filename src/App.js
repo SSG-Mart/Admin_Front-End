@@ -1,9 +1,6 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
-
-import MainRoutes from "./routes";
-// import Home from './Admin_panel/adminHome/adminHome';
-
+import { BrowserRouter } from 'react-router-dom';
+import MainRoutes from "./MainRoutes";
 import Nav from "./Admin_panel/adminNav/adminNav";
 import "./App.css";
 

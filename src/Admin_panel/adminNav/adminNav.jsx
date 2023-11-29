@@ -5,9 +5,17 @@ import { FiUsers} from "react-icons/fi";
 import {MdOutlineReport} from "react-icons/md";
 import {AiOutlineLogout} from "react-icons/ai";
 import { useNavigate } from 'react-router-dom';
+import instance from '../../config/axiosConfig';
 
 export default function AdminNav() {
-    const navigate = useNavigate();;
+    const navigate = useNavigate();
+
+    const logout = () => {
+        instance.post('api/admin/logout').then((res) => {
+            console.log(res.data);
+            navigate('/auth');
+        })
+    }
   return (
     
     <div className='navigation-container'>
@@ -35,7 +43,7 @@ export default function AdminNav() {
             </div>
             <div className="Line">|</div>
 
-            <div className="NI">
+            <div className="NI" onClick={logout}>
                 <AiOutlineLogout style={{cursor: 'pointer'}}/>
                 <p style={{cursor: 'pointer'}}>Log Out</p>
             </div>
