@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Authontication/Login.scss';
 import instance from '../../config/axiosConfig';
 import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
+export default function Login({setTrigger}) {
+    const navigation = useNavigate()
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+    const [auth, setAuth] = useState(null)
 
-    const navigation = useNavigate()
+    
+    useEffect(() => {
+        const navi = async () => {
+            // if(auth === true) navigation('/')
+            
+        }
+
+        navi()
+    },[auth])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,15 +32,20 @@ export default function Login() {
                 password: password,
             });
 
-            console.log("Login Successful", response.data);
-            navigation('/');
+            if (response.status === 200) {
+                setAuth(true)
+                setTrigger(prv=>!prv)
+            }
+
 
         } catch {
             alert("Please Enter The Correct Email and Password !!")
+            setAuth(false)
         } finally {
             setLoading(false);
         }
     };
+
 
     return (
         <div className='login-container'>

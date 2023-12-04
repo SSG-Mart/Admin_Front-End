@@ -13,7 +13,10 @@ export default function AdminNav() {
     const logout = () => {
         instance.post('api/admin/logout').then((res) => {
             console.log(res.data);
-            navigate('/auth');
+            window.location.reload(false);
+        }).catch((err) => {
+            console.log(err);
+            window.location.reload(false);
         })
     }
   return (
