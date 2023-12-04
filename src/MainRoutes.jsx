@@ -33,6 +33,7 @@ export default function MainRoutes() {
 
     checkAuth()
 
+    // eslint-disable-next-line
   },[trigger])
 
   if(auth !== null) return (
